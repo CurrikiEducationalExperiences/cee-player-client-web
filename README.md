@@ -1,1 +1,1 @@
-# lti-epub-player
+cee-player-client-web
