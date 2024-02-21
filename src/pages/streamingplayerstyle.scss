@@ -1,0 +1,23 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh;
+}
+
+.loading img {
+    width: 50vw;
+}
+
+.loading p {
+    text-align: center;
+    margin-top: 2em;
+    font-size: 5vh;
+}
+
+.loading .error {
+    background-color: bisque;
+    padding: 1em;
+    font-size: 1em;
+}
