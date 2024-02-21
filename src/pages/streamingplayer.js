@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { useSearchParams } from "react-router-dom";
-const streamManifestUrl = `${process.env.REACT_APP_API_DOMAIN_URL}/api/v1/stream2/manifest`;
-const streamTokenUrl = `${process.env.REACT_APP_API_DOMAIN_URL}/api/v1/stream2/token`;
+import logo from '../assets/images/c2elogo.svg';
+import "./streamingplayerstyle.scss";
+
+const streamManifestUrl = `${process.env.REACT_APP_API_DOMAIN_URL}/api/v1/stream/manifest`;
+const streamTokenUrl = `${process.env.REACT_APP_API_DOMAIN_URL}/api/v1/stream/token`;
 
 function StreamingPlayer(props) {
   const [searchParams] = useSearchParams();
@@ -90,12 +93,17 @@ function StreamingPlayer(props) {
 
   return (
     <div>
-      <h1 style={{height:'5vh'}}>Test Streaming player</h1>
       {!c2eManifest && !error && (
-        <p>Loading...</p>
+        <div className='loading'>
+          <img src={logo} alt="Curriki Educational Experiences logo" />
+          <p>Loading...</p>
+        </div>
       )}
       {error && (
-        <p>Error: {error}</p>
+        <div className='loading'>
+          <img src={logo} alt="Curriki Educational Experiences logo" />
+          <p className='error'>Error: {error}</p>
+        </div>
       )}
       {streamContentUrl && (
         <iframe src={streamContentUrl} style={{height:'95vh', width: '100%'}} title="C2E Content"></iframe>
